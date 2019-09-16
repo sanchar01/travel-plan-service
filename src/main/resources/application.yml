@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 80
 spring:
 #  main:
 #    allow-bean-definition-overriding: true
@@ -13,9 +13,6 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
-  redis:
-    host: 127.0.0.1
-    port: 6379
 
 mybatis:
   mapper-locations: classpath*:/mapper/*/*.xml
