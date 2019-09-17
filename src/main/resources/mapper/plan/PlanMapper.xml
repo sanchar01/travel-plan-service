@@ -11,4 +11,13 @@
             </foreach>
         </where>
     </delete>
+
+    <select id="queryList" resultType="per.san.plan.domain.Plan">
+        select * from plan
+        <where>
+            is_deleted = 0
+        </where>
+        order by creation_date desc
+        limit #{page} * 20, 20
+    </select>
 </mapper>

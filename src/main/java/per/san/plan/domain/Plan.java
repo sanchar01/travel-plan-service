@@ -5,6 +5,7 @@ import per.san.generate.domain.AuditDomain;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Date;
 
 /**
@@ -53,6 +54,9 @@ public class Plan extends AuditDomain {
     *用户ID
     */
     private Long userId;
+
+    @Transient
+    private Integer page;
 
     public Long getId() {
         return this.id;
@@ -110,4 +114,11 @@ public class Plan extends AuditDomain {
         this.userId = userId;
     }
 
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
 }

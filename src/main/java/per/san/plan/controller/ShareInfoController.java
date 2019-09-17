@@ -81,15 +81,15 @@ public class ShareInfoController {
             @RequestParam(required = false) Long userId,
             @RequestParam(required = false) String content,
             @RequestParam(required = false) String address,
-            @RequestParam(required = false) Integer isShowLocation,
             @RequestParam(required = false) String permission,
-            @RequestParam(required = false) Integer isDeleted
+            @RequestParam(required = false) Integer page
             ) {
         ShareInfo shareInfo = new ShareInfo();
         shareInfo.setUserId(userId);
         shareInfo.setContent(content);
         shareInfo.setAddress(address);
         shareInfo.setPermission(permission);
+        shareInfo.setPage(page * 10);
         return new ResponseEntity<>(iShareInfoService.queryList(shareInfo), HttpStatus.OK);
     }
 

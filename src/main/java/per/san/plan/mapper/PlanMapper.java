@@ -23,4 +23,6 @@ public interface PlanMapper extends BaseMapper<Plan> {
      */
     Integer deleteBatch(@Param("ids") List<Long> ids);
 
+    List<Plan> queryList(Plan plan);
+
 }

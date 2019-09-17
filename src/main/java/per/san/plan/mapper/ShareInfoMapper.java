@@ -23,4 +23,6 @@ public interface ShareInfoMapper extends BaseMapper<ShareInfo> {
      */
     Integer deleteBatch(@Param("ids") List<Long> ids);
 
+    List<ShareInfo> queryList(ShareInfo shareInfo);
+
 }

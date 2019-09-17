@@ -91,7 +91,7 @@ public class PlanController {
             @RequestParam(required = false) String permission,
             @RequestParam(required = false) String status,
             @RequestParam(required = false) Long userId,
-            @RequestParam(required = false) Integer isDeleted
+            @RequestParam(required = false) Integer page
             ) {
         Plan plan = new Plan();
         plan.setPlanName(planName);
@@ -100,6 +100,7 @@ public class PlanController {
         plan.setPermission(permission);
         plan.setStatus(status);
         plan.setUserId(userId);
+        plan.setPage(page);
         return new ResponseEntity<>(iPlanService.queryList(plan), HttpStatus.OK);
     }
 

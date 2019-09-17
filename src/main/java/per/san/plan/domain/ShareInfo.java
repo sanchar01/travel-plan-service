@@ -52,6 +52,9 @@ public class ShareInfo extends AuditDomain {
     @Transient
     private OauthUser user;
 
+    @Transient
+    private Integer page;
+
     public Long getId() {
         return this.id;
     }
@@ -106,5 +109,13 @@ public class ShareInfo extends AuditDomain {
 
     public void setUser(OauthUser user) {
         this.user = user;
+    }
+
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
     }
 }

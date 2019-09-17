@@ -56,7 +56,7 @@ public class ShareInfoServiceImpl implements IShareInfoService {
 
     @Override
     public List<ShareInfo> queryList(ShareInfo shareInfo) {
-        List<ShareInfo> shareInfoList = shareInfoMapper.select(shareInfo);
+        List<ShareInfo> shareInfoList = shareInfoMapper.queryList(shareInfo);
         shareInfoList.forEach(item -> item.setUser(oauthUserMapper.selectByPrimaryKey(item.getUserId())));
         return shareInfoList;
     }
